@@ -4,7 +4,8 @@ import UseFetch from "./hooks/UseFetch";
 
 function App() {
   const [count, setCount] = useState(null);
-  const url = `http://localhost:3000/products/${count ? count : ""}`;
+  const [page, setPage] = useState("products");
+  const url = `http://localhost:3000/${page}/${count ? count : ""}`;
 
   const data = UseFetch(url);
 
@@ -18,6 +19,21 @@ function App() {
         }}
       >
         Increment
+      </button>
+      <button
+        onClick={() => {
+          setPage("products");
+        }}
+      >
+        Products
+      </button>
+      <button
+        className="button"
+        onClick={() => {
+          setPage("orders");
+        }}
+      >
+        Orders
       </button>
     </React.Fragment>
   );
