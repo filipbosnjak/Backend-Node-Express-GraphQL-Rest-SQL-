@@ -8,8 +8,14 @@ router.get("/", (req, res, next) => {
 }); //Everything after /products is targeted and handled here
 
 router.post("/", (req, res, next) => {
+  const product = {
+    name: req.body.name,
+    price: req.body.price,
+  };
+
   res.status(200).json({
     message: "POST request",
+    createdProduct: req.body,
   });
 });
 
