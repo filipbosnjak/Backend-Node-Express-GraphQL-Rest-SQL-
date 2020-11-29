@@ -7,6 +7,12 @@ const app = express();
 const productRoutes = require("./api/routes/products");
 const ordersRoutes = require("./api/routes/orders");
 
+// app.get("/", (req, res, next) => {
+//   res.status(200).json({
+//     message: "Hello world!",
+//   });
+// });
+
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
